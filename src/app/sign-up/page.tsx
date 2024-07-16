@@ -3,8 +3,10 @@ import SignUpForm from "./_components/signUpForm";
 
 const SignIn: FC = () => {
   return (
-    <main className="min-h-screen">
-      <SignUpForm />
+    <main className="flex min-h-screen w-full items-center justify-center">
+      <div className="w-full max-w-lg flex-shrink-0">
+        <SignUpForm />
+      </div>
     </main>
   );
 };
