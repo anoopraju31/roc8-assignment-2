@@ -14,6 +14,7 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
+import Link from "next/link";
 
 const SignUpForm: FC = () => {
   const form = useForm<SignUpFormData>({
@@ -89,6 +90,14 @@ const SignUpForm: FC = () => {
         >
           Create Account
         </Button>
+
+        <div className="text-center">
+          <span className="text-gray-500"> Have an Account? </span>
+          <Link href="/sign-in" className="font-medium">
+            {" "}
+            LOGIN{" "}
+          </Link>
+        </div>
       </form>
     </Form>
   );
