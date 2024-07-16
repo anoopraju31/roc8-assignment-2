@@ -1,9 +1,16 @@
 import { z } from "zod";
 
 export const signUpFormSchema = z.object({
-  email: z.string().optional(),
-  name: z.string().min(1, "name is required"),
-  password: z.string().min(6, "password is required"),
+  email: z.string({ required_error: "email is required" }).email(),
+  name: z.string({ required_error: "name is required" }).min(1),
+  password: z.string({ required_error: "password is required" }).min(6),
 });
 
 export type SignUpFormData = z.infer<typeof signUpFormSchema>;
+
+export const signInFormSchema = z.object({
+  email: z.string({ required_error: "email is required" }).email(),
+  password: z.string({ required_error: "password is required" }).min(6),
+});
+
+export type SignInFormData = z.infer<typeof signInFormSchema>;
