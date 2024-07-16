@@ -14,3 +14,13 @@ export const signInFormSchema = z.object({
 });
 
 export type SignInFormData = z.infer<typeof signInFormSchema>;
+
+export const otpFormSchema = z.object({
+  pin: z
+    .string({
+      message: "Your one-time password must be 8 characters.",
+    })
+    .min(8),
+});
+
+export type OtpFormData = z.infer<typeof otpFormSchema>;
